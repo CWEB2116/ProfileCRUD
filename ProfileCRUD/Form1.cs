@@ -46,5 +46,12 @@ namespace ProfileCRUD
         {
             Console.WriteLine("Hello World");
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'authenticateDataSet.ProfDetails' table. You can move, or remove it, as needed.
+            this.profDetailsTableAdapter.Fill(this.authenticateDataSet.ProfDetails);
+
+        }
     }
 }
