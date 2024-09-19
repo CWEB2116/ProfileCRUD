@@ -51,6 +51,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AuthenticateDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataBase.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -45,17 +45,13 @@
             this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.dataGrid_DispRec = new System.Windows.Forms.DataGridView();
-            this.btn_displayAll = new System.Windows.Forms.Button();
-            this.authenticateDataSet = new ProfileCRUD.AuthenticateDataSet();
             this.profDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.authenticateDataSet = new ProfileCRUD.AuthenticateDataSet();
+            this.btn_displayAll = new System.Windows.Forms.Button();
             this.profDetailsTableAdapter = new ProfileCRUD.AuthenticateDataSetTableAdapters.ProfDetailsTableAdapter();
-            this.regIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_DispRec)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.authenticateDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.authenticateDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_reg
@@ -144,6 +140,7 @@
             this.btn_update.TabIndex = 9;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_delete
             // 
@@ -154,6 +151,7 @@
             this.btn_delete.TabIndex = 10;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_cancel
             // 
@@ -164,7 +162,7 @@
             this.btn_cancel.TabIndex = 11;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
-            this.btn_cancel.Click += new System.EventHandler(this.button4_Click);
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // txt_search
             // 
@@ -181,24 +179,27 @@
             this.btn_search.TabIndex = 13;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
-            this.btn_search.Click += new System.EventHandler(this.button5_Click);
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // dataGrid_DispRec
             // 
-            this.dataGrid_DispRec.AutoGenerateColumns = false;
             this.dataGrid_DispRec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_DispRec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.regIDDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn});
-            this.dataGrid_DispRec.DataSource = this.profDetailsBindingSource;
             this.dataGrid_DispRec.Location = new System.Drawing.Point(38, 298);
             this.dataGrid_DispRec.Name = "dataGrid_DispRec";
             this.dataGrid_DispRec.RowHeadersWidth = 51;
             this.dataGrid_DispRec.RowTemplate.Height = 24;
             this.dataGrid_DispRec.Size = new System.Drawing.Size(717, 150);
             this.dataGrid_DispRec.TabIndex = 14;
+            // 
+            // profDetailsBindingSource
+            // 
+            this.profDetailsBindingSource.DataMember = "ProfDetails";
+            this.profDetailsBindingSource.DataSource = this.authenticateDataSet;
+            // 
+            // authenticateDataSet
+            // 
+            this.authenticateDataSet.DataSetName = "AuthenticateDataSet";
+            this.authenticateDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_displayAll
             // 
@@ -208,53 +209,11 @@
             this.btn_displayAll.TabIndex = 15;
             this.btn_displayAll.Text = "Display all records";
             this.btn_displayAll.UseVisualStyleBackColor = true;
-            this.btn_displayAll.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // authenticateDataSet
-            // 
-            this.authenticateDataSet.DataSetName = "AuthenticateDataSet";
-            this.authenticateDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // profDetailsBindingSource
-            // 
-            this.profDetailsBindingSource.DataMember = "ProfDetails";
-            this.profDetailsBindingSource.DataSource = this.authenticateDataSet;
+            this.btn_displayAll.Click += new System.EventHandler(this.btn_displayAll_Click);
             // 
             // profDetailsTableAdapter
             // 
             this.profDetailsTableAdapter.ClearBeforeFill = true;
-            // 
-            // regIDDataGridViewTextBoxColumn
-            // 
-            this.regIDDataGridViewTextBoxColumn.DataPropertyName = "RegID";
-            this.regIDDataGridViewTextBoxColumn.HeaderText = "RegID";
-            this.regIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.regIDDataGridViewTextBoxColumn.Name = "regIDDataGridViewTextBoxColumn";
-            this.regIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.Width = 125;
             // 
             // Form1
             // 
@@ -283,8 +242,8 @@
             this.Text = "ProfileCRUD";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_DispRec)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.authenticateDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.authenticateDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,10 +270,6 @@
         private AuthenticateDataSet authenticateDataSet;
         private System.Windows.Forms.BindingSource profDetailsBindingSource;
         private AuthenticateDataSetTableAdapters.ProfDetailsTableAdapter profDetailsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn regIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
     }
 }
 
